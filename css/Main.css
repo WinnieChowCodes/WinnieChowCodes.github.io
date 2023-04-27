@@ -1,0 +1,25 @@
+#questionContainer {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 100px;
+}
+
+#question {
+	background-color: #dfdfe6;
+	align-self: center;
+	padding: 25px;
+	margin-top: 5px;
+	margin-right: 50px;
+}
+
+#workspaceContainer {
+	display: flex;
+	justify-content: space-around;
+}
+
+#imgERD {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}

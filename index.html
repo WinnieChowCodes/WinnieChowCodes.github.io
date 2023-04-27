@@ -1,7 +1,96 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SQL Detective</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+	type="text/javascript"></script>
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./css/Main.css">
+<script src="https://kit.fontawesome.com/dcd1b8ca28.js"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/alasql@3"></script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	<p id="questionLevel"></p>
+	<div id="questionContainer">
+		<p id="question"></p>
+		<img src="./images/Character_normal.png" />
+	</div>
+
+	<div id="workspaceContainer">
+		<div id="queryContainer">
+			<textarea id="query" placeholder="Query here..." rows="5" cols="45"></textarea>
+			<br />
+			<button id="btnQuery" type="submit">Run</button>
+			<button id="btnQuestion" type="submit" data-toggle="modal"
+				data-target="#onSuccessModal">Next Question</button>
+			<button id="btnHint" data-toggle="modal" data-target="#hintModal">Hint</button>
+			<br>
+			<p id="error"></p>
+		</div>
+		<div id="result"
+			style="overflow-y: scroll; height: 400px; background-color: 'gray'"></div>
+	</div>
+	<img id="imgERD">
+
+	<div id="hintModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Hint</h4>
+				</div>
+				<div class="modal-body">
+					<p id="hint"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="onSuccessModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="onSuccessMessage" class="modal-title"></h4>
+				</div>
+				<div class="modal-body">
+					<div id="stars"></div>
+				</div>
+				<div class="modal-footer">
+					<button id="closeSuccessModal" type="button"
+						class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- External JavaScript Files -->
+	<footer>
+		<script type="text/javascript" src="./js/JQuery.js"></script>
+		<script type="text/javascript" src="./js/Game.js"></script>
+		<script type="text/javascript" src="./js/Main.js"></script>
+		<script type="text/javascript" src="./js/jsonTable.js"></script>
+		<script type="text/javascript" src="./js/data.js"></script>
+	</footer>
 </body>
 </html>
